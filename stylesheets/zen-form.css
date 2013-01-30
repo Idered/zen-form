@@ -79,7 +79,6 @@
 
 .zen-forms .empty + label {
 	display: block;
-
 }
 
 .zen-forms input:focus + label,
