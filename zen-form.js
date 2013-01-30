@@ -45,7 +45,7 @@
 
                     var theme = settings.theme == 'dark' ? '' : ' light-theme';
 
-                    return $('<div>', {class: 'zen-form' + theme}).hide().appendTo('body').fadeIn(200);
+                    return $('<div>', {class: 'zen-forms' + theme}).hide().appendTo('body').fadeIn(200);
 
                 }, // create
 
@@ -158,7 +158,8 @@
 
             var $this = $(this);
 
-            $(settings.trigger).on('click', function() {
+            $(settings.trigger).on('click', function(event) {
+                event.preventDefault();
                 App.zen( $this.is('form') ? $this.find('input, textarea') : $this );
             });
 
