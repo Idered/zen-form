@@ -78,7 +78,7 @@
                             value = $this.val(),
                             id    = $this.attr('id'),
                             ID    = 'zen-forms-input' + i,
-                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder') || value;
+                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder');
 
                         // Exclude specified elements
                         if ( $.inArray( $this.attr('type'), ['checkbox', 'radio', 'submit']) == -1) {

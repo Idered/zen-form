@@ -5,6 +5,7 @@
 
 .zen-forms {
 	position: fixed;
+	z-index: 99999;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -40,7 +41,7 @@
 	font-size: 34px;
 }
 
-.zen-forms-close-button:hover.
+.zen-forms-close-button:hover,
 .zen-forms-theme-switch:hover {
 	color: #667981;
 }
@@ -68,16 +69,15 @@
 }
 
 .zen-forms label {
+	cursor: pointer;
 	display: none;
+	padding: 8px 3;
 	position: absolute;
 	top: 0;
-	padding: 8px 0;
 	width: 100%;
-	cursor: pointer;
 }
 
-.zen-forms input.empty + label,
-.zen-forms textarea.empty + label {
+.zen-forms .empty + label {
 	display: block;
 }
 
