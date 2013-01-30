@@ -35,6 +35,23 @@
 
 <p>Zen Form plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.</p>
 
+<h2>Demo</h2>
+
+<form action="/" class="zen-form">
+  <a href="#" class="go-zen">Edit in zen mode</a>
+  <input type="text" placeholder="Type your name here...">
+  <textarea name="bio" id="bio">Write your bio here...</textarea>
+  <input type="submit" name="submit" value="Send">
+</form>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://raw.github.com/Idered/zen-form/master/zen-form.js"></script>
+<script>
+  (function($) {
+    $('.zen-form')
+  })(jQuery)
+</script>
+
 <h2>Docs</h2>
 
 <p>You can add zen mode for all fields in form or single one. At the moment supported are only text inputs and textareas.</p>
@@ -118,7 +135,7 @@
       </footer>
     </div>
 
-    
+
 
   </body>
 </html>
