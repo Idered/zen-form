@@ -1,0 +1,124 @@
+
+/* ================================== *\
+ * Zen Form
+ * ================================== */
+
+.zen-form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 24px 30px 24px 24px;
+}
+
+.zen-form-input-wrap {
+	max-width: 640px;
+	position: relative;
+	margin: 0 auto;
+}
+
+/**
+ * Buttons style
+ */
+.zen-form-close-button,
+.zen-form-theme-switch {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	top: 10px;
+	right: 10px;
+	font-size: 24px;
+	color: #516066;
+	cursor: pointer;
+	line-height: 1;
+}
+
+.zen-form-theme-switch {
+	top: 28px;
+	font-size: 34px;
+}
+
+.zen-form-close-button:hover.
+.zen-form-theme-switch:hover {
+	color: #667981;
+}
+
+/**
+ * Inputs basic style
+ */
+.zen-form input,
+.zen-form textarea {
+	padding: 8px 0;
+	width: 100%;
+	background: none;
+	border: none;
+	margin-bottom: 24px;
+	cursor: pointer;
+}
+
+.zen-form input:focus,
+.zen-form textarea:focus {
+	cursor: text;
+}
+
+.zen-form textarea {
+	resize: none;
+}
+
+.zen-form label {
+	display: none;
+	position: absolute;
+	top: 0;
+	padding: 8px 0;
+	width: 100%;
+	cursor: pointer;
+}
+
+.zen-form input.empty + label,
+.zen-form textarea.empty + label {
+	display: block;
+}
+
+.zen-form input:focus + label,
+.zen-form textarea:focus + label {
+	display: none;
+}
+
+.zen-form :focus {
+	outline-color: transparent;
+	outline-style: none;
+}
+
+/**
+ * Dark theme
+ */
+.zen-form {
+	background: #151a1c;
+}
+
+.zen-form label {
+	color: #516066;
+}
+
+.zen-form input,
+.zen-form textarea {
+	color: #667981;
+}
+
+/**
+ * Light theme
+ */
+.zen-form.light-theme {
+	background: #fefefe;
+}
+
+.zen-form.light-theme label {
+	color: #959697;
+}
+
+.zen-form.light-theme input,
+.zen-form.light-theme textarea {
+	color: #707071;
+}

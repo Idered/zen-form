@@ -7,6 +7,7 @@
     <meta name="description" content="Zen Form : Add distraction mode for forms" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/zen-form.css">
 
     <title>Zen Form</title>
   </head>
@@ -37,20 +38,12 @@
 
 <h2>Demo</h2>
 
-<form action="/" class="zen-form">
+<form action="/" class="zen">
   <a href="#" class="go-zen">Edit in zen mode</a>
-  <input type="text" placeholder="Type your name here...">
-  <textarea name="bio" id="bio">Write your bio here...</textarea>
+  <input type="text" placeholder="Type your name here..." class="input">
+  <textarea name="bio" id="bio" class="input">Write your bio here...</textarea>
   <input type="submit" name="submit" value="Send">
 </form>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="https://raw.github.com/Idered/zen-form/master/zen-form.js"></script>
-<script>
-  (function($) {
-    $('.zen-form')
-  })(jQuery)
-</script>
 
 <h2>Docs</h2>
 
@@ -136,6 +129,14 @@
     </div>
 
 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="javascripts/zen-form.js"></script>
+<script>
+(function($) {
+  $('.zen').zenForm();
+})(jQuery)
+</script>
 
   </body>
 </html>
