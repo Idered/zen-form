@@ -2,7 +2,7 @@
 
 (function($) {
 
-    $.fn.zenForms = function(settings) {
+    $.fn.zenForm = function(settings) {
 
         settings = $.extend({
             trigger: '.go-zen',
