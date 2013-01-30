@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Zen Form : Add distraction mode for forms" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Zen Form</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Idered/zen-form">View on GitHub</a>
+
+          <h1 id="project_title">Zen Form</h1>
+          <h2 id="project_tagline">Add distraction mode for forms</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Idered/zen-form/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Idered/zen-form/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Zen Form</h1>
+
+<p>Zen Form plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.</p>
+
+<h2>Docs</h2>
+
+<p>You can add zen mode for all fields in form or single one. At the moment supported are only text inputs and textareas.</p>
+
+<h3>Add zen for all supported elements in form</h3>
+
+<p><strong>HTML</strong></p>
+
+<pre><code>&lt;form class="zen-mode"&gt;
+    &lt;a href="#" class="go-zen"&gt;Open zen mode&lt;/a&gt;
+    &lt;input type="text" name="name" placeholder="Type your name here."&gt;
+    &lt;textarea name="bio" placeholder="Write your bio here..."&gt;&lt;/textarea&gt;
+    &lt;input type="submit" name="submit" value="Send"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>.go-zen class is the default class that opens zen mode.</p>
+
+<p><strong>JS</strong></p>
+
+<pre><code>$('.zen-mode').zenForm();
+</code></pre>
+
+<h3>Add zen mode for single element</h3>
+
+<p>Bellow you can see how to change theme and use custom element as a trigger that opens zen mode.</p>
+
+<p><strong>HTML</strong></p>
+
+<pre><code>&lt;form&gt;
+    &lt;a href="#" class="open-zen-mode"&gt;Open zen mode&lt;/a&gt;
+    &lt;input type="text" name="name" placeholder="Type your name here."&gt;
+    &lt;textarea name="bio" placeholder="Write your bio here..." class="zen-mode"&gt;&lt;/textarea&gt;
+    &lt;input type="submit" name="submit" value="Send"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p><strong>JS</strong></p>
+
+<pre><code>$('.zen-mode').zenForm({
+    trigger: '.open-zen-mode',
+    theme: 'light'
+});
+</code></pre>
+
+<h2>Settings</h2>
+
+<ul>
+<li>trigger ('.go-zen') - element the opens zen mode on click</li>
+<li>theme   ('dark')</li>
+</ul><h2>Contributing</h2>
+
+<ol>
+<li>Fork it!</li>
+<li>Create your feature branch: <code>git checkout -b my-new-feature</code>
+</li>
+<li>Commit your changes: <code>git commit -am 'Add some feature'</code>
+</li>
+<li>Push to the branch: <code>git push origin my-new-feature</code>
+</li>
+<li>Submit a pull request :D</li>
+</ol><h2>License</h2>
+
+<p><strong>MIT Licensing</strong></p>
+
+<p>Copyright (c) 2013 Kasper Mikiewicz</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Zen Form maintained by <a href="https://github.com/Idered">Idered</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
