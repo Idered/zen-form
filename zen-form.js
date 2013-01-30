@@ -45,7 +45,7 @@
 
                     var theme = settings.theme == 'dark' ? '' : ' light-theme';
 
-                    return $('<div>', {class: 'zen-forms' + theme}).hide().appendTo('body').fadeIn(200);
+                    return $('<div>', {class: 'zen-form' + theme}).hide().appendTo('body').fadeIn(200);
 
                 }, // create
 
