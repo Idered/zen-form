@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<title></title>
+	<link type="text/plain" rel="author" href="humans.txt">
+	<link rel="shortcut icon" href="icon.png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../zen-forms.css">
+</head>
+<body>
+
+	<form action="" class="zen-form">
+		<a href="#" class="go-zen">Open zen mode</a>
+		<label for="input1">Title goes here...</label>
+		<input type="text" id="input1" value="Sample value" class="input">
+		<input type="checkbox" id="input1" value="Sample value" class="input">
+		<label for="input2">Type your content here...</label>
+		<textarea name="message" id="input2" cols="30" rows="10" class="input"></textarea>
+	</form>
+
+<script src="jquery.js"></script>
+<script src="../zen-forms.js"></script>
+<script>
+	(function($) {
+		$('.zen-mode').zenForms();
+	})(jQuery);
+</script>
+</body>
+</html>
