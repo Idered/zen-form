@@ -56,7 +56,12 @@
 
                     // Update orginal inputs with new values
                     $elements.each(function(i) {
-                       $(this).val($('#zen-forms-input' + i).val());
+
+                        var $el = $('#zen-forms-input' + i);
+
+                        if ( $el.length )
+                            $(this).val($el.val());
+
                     });
 
                     $('.zen-forms').fadeOut(200, function() {
@@ -78,7 +83,7 @@
                             value = $this.val(),
                             id    = $this.attr('id'),
                             ID    = 'zen-forms-input' + i,
-                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder');
+                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder') || '';
 
                         // Exclude specified elements
                         if ( $.inArray( $this.attr('type'), ['checkbox', 'radio', 'submit']) == -1) {
