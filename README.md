@@ -1,6 +1,6 @@
-# Zen Forms
+# Zen Form
 
-Zen Forms plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.
+Zen Form plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.
 
 ## Docs
 
@@ -22,7 +22,7 @@ You can add zen mode for all fields in form or single one. At the moment support
 
 **JS**
 ```
-$('.zen-mode').zenForms();
+$('.zen-mode').zenForm();
 ```
 
 ### Add zen mode for single element
@@ -41,7 +41,7 @@ Bellow you can see how to change theme and use custom element as a trigger that 
 
 **JS**
 ```
-$('.zen-mode').zenForms({
+$('.zen-mode').zenForm({
 	trigger: '.open-zen-mode',
 	theme: 'light'
 });
