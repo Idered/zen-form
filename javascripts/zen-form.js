@@ -45,7 +45,7 @@
 
                     var theme = settings.theme == 'dark' ? '' : ' light-theme';
 
-                    return $('<div>', {class: 'zen-form' + theme}).hide().appendTo('body').fadeIn(200);
+                    return $('<div>', {class: 'zen-forms' + theme}).hide().appendTo('body').fadeIn(200);
 
                 }, // create
 
@@ -56,10 +56,13 @@
 
                     // Update orginal inputs with new values
                     $elements.each(function(i) {
-                       $(this).val($('#zen-form-input' + i).val());
+                        var $el = $('#zen-forms-input' + i);
+
+                        if ( $el.length )
+                            $(this).val($el.val());
                     });
 
-                    $('.zen-form').fadeOut(200, function() {
+                    $('.zen-forms').fadeOut(200, function() {
                         $(this).remove();
                     });
 
@@ -73,12 +76,12 @@
                     $elements.each(function(i) {
 
                         var $this    = $(this),
-                            $wrapper = App.env.addObject(App.Environment, 'div', {class: 'zen-form-input-wrap'}),
+                            $wrapper = App.env.addObject(App.Environment, 'div', {class: 'zen-forms-input-wrap'}),
 
                             value = $this.val(),
                             id    = $this.attr('id'),
-                            ID    = 'zen-form-input' + i,
-                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder') || value;
+                            ID    = 'zen-forms-input' + i,
+                            label = $("label[for=" + id + "]").text() || $this.attr('placeholder') || '';
 
                         // Exclude specified elements
                         if ( $.inArray( $this.attr('type'), ['checkbox', 'radio', 'submit']) == -1) {
@@ -130,7 +133,7 @@
 
                 // Add close button
                 App.env.addObject(App.Environment, 'a', {
-                    class: 'zen-form-close-button',
+                    class: 'zen-forms-close-button',
                     html: '&times;'
                 }, function() {
                     App.env.destroy($elements);
@@ -138,7 +141,7 @@
 
                 // Add theme switch button
                 App.env.addObject(App.Environment, 'a', {
-                    class: 'zen-form-theme-switch',
+                    class: 'zen-forms-theme-switch',
                     html: '&bull;'
                 }, function() {
                     App.env.switchTheme();
@@ -158,7 +161,8 @@
 
             var $this = $(this);
 
-            $(settings.trigger).on('click', function() {
+            $(settings.trigger).on('click', function(event) {
+                event.preventDefault();
                 App.zen( $this.is('form') ? $this.find('input, textarea') : $this );
             });
 
