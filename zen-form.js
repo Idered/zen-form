@@ -148,6 +148,13 @@
                 }, function() {
                     App.env.switchTheme();
                 });
+                
+                App.Environment.keydown(function(e) {
+                    // ESC to exit
+                    if (e.which == 27) {
+                        App.env.destroy($elements);
+                    }
+                });
 
                 // Add inputs and textareas from form
                 App.env.add($elements);
