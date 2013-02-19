@@ -1,4 +1,4 @@
-/** Zen Forms 1.0.1 | MIT License | git.io/zen-form */
+/** Zen Forms 1.0.2 | MIT License | git.io/zen-form */
 
 (function($) {
 
@@ -14,9 +14,12 @@
          */
         var Utils = {
 
-            watchEmpty: function($form) {
+            /**
+             * Watch inputs and add "empty" class if needed
+             */
+            watchEmpty: function() {
 
-                $form.find('input, textarea, select').each(function() {
+                App.Environment.find('input, textarea, select').each(function() {
 
                    $(this).on('change', function() {
 
@@ -28,6 +31,9 @@
 
             },
 
+            /**
+             * Custom styled selects
+             */
             customSelect: function($select, $customSelect) {
 
                 var $selected;
@@ -55,7 +61,36 @@
 
                 });
 
-            }
+            }, // customSelect
+
+            goTop: function() {
+
+                $('html,body').scrollTop(0);
+
+            }, // goTop
+
+            /**
+             * Hide any elements(mostly selects) when clicked outside them
+             */
+            manageSelects: function() {
+
+                $(document).on('click', function() {
+                    $('.is-open').removeClass('is-open');
+                });
+
+            }, // manageSelects
+
+            /**
+             * Hide any elements(mostly selects) when clicked outside them
+             */
+            focusFirst: function() {
+
+                var $first = App.Environment.find('input').first();
+
+                // we need to re-set value to remove focus selection
+                $first.focus().val( $first.val() );
+
+            } // focusFirst
 
         }, // Utils
 
@@ -277,19 +312,16 @@
                     }
                 });
 
-                // Go to top
-                $('html,body').scrollTop(0);
-
-                // Hide any elements(mostly selects) when clicked outside them
-                $(document).on('click', function() {
-                    $('.is-open').removeClass('is-open');
-                });
-
                 // Add inputs and textareas from form
                 App.env.add($elements);
 
-                // Watch inputs and add "empty" class if needed
-                Utils.watchEmpty(App.Environment);
+                Utils.goTop();
+
+                Utils.manageSelects();
+
+                Utils.focusFirst();
+
+                Utils.watchEmpty();
 
             }, // zen
 
