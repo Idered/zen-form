@@ -18,6 +18,12 @@
 	        box-sizing: border-box;
 }
 
+.zen-forms-body-wrap {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
 body {
 	max-width: 100%;
 }

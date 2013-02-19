@@ -14,6 +14,20 @@
          */
         var Utils = {
 
+            bodyWrap: function() {
+
+                var $body = $('body');
+
+                if ( $body.children('.zen-forms-body-wrap').length ) {
+                    $body.children('.zen-forms-body-wrap').children().unwrap();
+                    console.log(1);
+                } else {
+                    $body.wrapInner('<div class="zen-forms-body-wrap"/>');
+                    console.log(2);
+                }
+
+            }, // bodyWrap
+
             /**
              * Watch inputs and add "empty" class if needed
              */
@@ -125,6 +139,8 @@
                     // Callback: zf-initialize
                     App.Form.trigger('zf-initialize');
 
+                    Utils.bodyWrap();
+
                     App.Environment = $('<div>', {
                         class: 'zen-forms' + (settings.theme == 'dark' ? '' : ' light-theme')
                     }).hide().appendTo('body').fadeIn(200);
@@ -150,6 +166,8 @@
                             $(this).val($el.val());
 
                     });
+
+                    Utils.bodyWrap();
 
                     // Hide and remove Environment
                     App.Environment.fadeOut(200, function() {
