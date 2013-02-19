@@ -3,32 +3,22 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 body {
 	width: 480px;
+	padding: 0 10px;
 	margin: 80px auto;
 }
 
 .go-zen {
-	display: block;
-	text-decoration: none;
-	width: 100%;
+	font-weight: bold;
 	color: #666;
-	text-shadow: 0 1px 0 #fff;
-	text-align: center;
-	border: 1px solid #d5d5d5;
-	border-radius: 3px;
-	padding: 8px 0;
-	margin-bottom: 24px;
-	box-shadow: 0 1px 3px #ddd;
-	background: #ddd;
-	background-image: -webkit-linear-gradient(top, #fefefe, #ededed);
-	background-image:    -moz-linear-gradient(top, #fefefe, #ededed);
-	background-image:     -ms-linear-gradient(top, #fefefe, #ededed);
-	background-image:      -o-linear-gradient(top, #fefefe, #ededed);
-	background-image:         linear-gradient(top, #fefefe, #ededed);
+	text-decoration: none;
 }
 
 label {
 	cursor: pointer;
 	display: block;
+	font-size: .9em;
+	color: #666;
+	margin-bottom: 4px;
 }
 
 .input {
@@ -44,4 +34,24 @@ label {
 
 textarea.input {
 	width: 100%;
+}
+
+input,
+textarea,
+select {
+	max-width: 100%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+select {
+	display: block;
+	margin-top: 4px;
+	margin-bottom: 12px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 4px;
+	color: #777;
+	box-shadow: 1px 1px 3px #ddd inset;
 }

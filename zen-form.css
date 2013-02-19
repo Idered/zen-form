@@ -1,16 +1,25 @@
-
 /* ================================== *\
  * Zen Form
  * ================================== */
 
 .zen-forms {
-	position: fixed;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 100%;
+	font-size: 1.2em;
+	position: absolute;
 	z-index: 99999;
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	min-height: 100%;
 	padding: 24px 30px 24px 24px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	max-width: 100%;
 }
 
 .zen-forms-input-wrap {
@@ -25,43 +34,136 @@
 .zen-forms-close-button,
 .zen-forms-theme-switch {
 	position: absolute;
-	width: 18px;
-	height: 18px;
-	text-align: center;
+	width: 16px;
+	height: 16px;
 	top: 10px;
 	right: 10px;
-	font-size: 24px;
-	color: #516066;
 	cursor: pointer;
-	line-height: 1;
 }
 
 .zen-forms-theme-switch {
-	top: 28px;
-	font-size: 34px;
+	top: 36px;
 }
 
-.zen-forms-close-button:hover,
-.zen-forms-theme-switch:hover {
-	color: #667981;
+.zen-icon {
+	background-image: url(zen-form-sprites.png);
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	vertical-align: top;
+	zoom: 1;
+	width: 16px;
+	height: 16px;
+	top: -1px;
+	overflow: hidden;
+   *text-indent: -9999px;
 }
+
+.zen-icon:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 100%;
+}
+
+.light-theme .zen-icon--close:hover,
+.zen-icon--close {
+	background-position: -16px 0;
+}
+
+.light-theme .zen-icon--theme:hover,
+.zen-icon--theme {
+	background-position: 0 0;
+}
+
+.light-theme .zen-icon--close,
+.zen-icon--close:hover {
+	background-position: -16px -16px;
+}
+
+.light-theme .zen-icon--theme,
+.zen-icon--theme:hover {
+	background-position: 0 -16px;
+}
+
 
 /**
  * Inputs basic style
  */
-.zen-forms input,
-.zen-forms textarea {
-	padding: 8px 0;
-	width: 100%;
+
+.zen-forms-input-wrap:after {
+	clear: both;
+	content: '';
+	display: table;
+	margin-bottom: 2px;
+}
+
+.zen-forms .input {
+	box-shadow: none;
 	background: none;
+	text-shadow: none;
+	padding: 7px 0;
+	width: 100%;
+	border-radius: 0;
 	border: none;
-	margin-bottom: 24px;
+	margin: 0;
 	cursor: pointer;
 }
 
-.zen-forms input:focus,
-.zen-forms textarea:focus {
+.zen-forms .input:focus {
 	cursor: text;
+}
+
+.zen-forms .select {
+	display: none;
+}
+
+.zen-forms .custom-select-wrap + label {
+	padding: 8px 3px;
+	position: static;
+	display: inline-block;
+	width: auto;
+	float: left;
+}
+
+.zen-forms .custom-select-wrap {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 100%;
+}
+
+.zen-forms .custom-select {
+	border-radius: 5px;
+	top: 0;
+	right: 0;
+	left: 0;
+	overflow: auto;
+	max-height: 300px;
+}
+
+.zen-forms .custom-select a {
+	display: inline-block;
+	display: block;
+	text-decoration: none;
+	padding: 6px 10px;
+	display: none;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.zen-forms .custom-select span {
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+.zen-forms .custom-select.is-open a,
+.zen-forms .custom-select .selected {
+	position: static;
+	display: block;
 }
 
 .zen-forms textarea {
@@ -70,9 +172,14 @@
 
 .zen-forms label {
 	cursor: pointer;
-	display: none;
-	padding: 8px 3;
+	padding: 8px 8px 8px 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.zen-forms .input + label {
 	position: absolute;
+	display: none;
 	top: 0;
 	width: 100%;
 }
@@ -81,8 +188,7 @@
 	display: block;
 }
 
-.zen-forms input:focus + label,
-.zen-forms textarea:focus + label {
+.zen-forms .input:focus + label {
 	display: none;
 }
 
@@ -99,12 +205,28 @@
 }
 
 .zen-forms label {
-	color: #516066;
+	color: #415056;
 }
 
-.zen-forms input,
-.zen-forms textarea {
-	color: #667981;
+.zen-forms .input {
+	color: #768991;
+}
+
+.zen-forms .custom-select {
+	background-color: #151a1c;
+	border: 2px solid #0f1314;
+}
+
+.zen-forms .custom-select a {
+	color: #768991;
+}
+
+.zen-forms .custom-select.is-open a:hover {
+	background-color: #181e20;
+}
+
+.zen-forms .custom-select.is-open .selected {
+	background-color: #0f1314;
 }
 
 /**
@@ -118,7 +240,23 @@
 	color: #959697;
 }
 
-.zen-forms.light-theme input,
-.zen-forms.light-theme textarea {
+.zen-forms.light-theme .input {
 	color: #707071;
+}
+
+.zen-forms.light-theme .custom-select {
+	background-color: #fefefe;
+	border: 2px solid #e5e5e5;
+}
+
+.zen-forms.light-theme .custom-select a {
+	color: #707071;
+}
+
+.zen-forms.light-theme .custom-select.is-open a:hover {
+	background-color: #f5f5f5;
+}
+
+.zen-forms.light-theme .custom-select.is-open .selected {
+	background-color: #e5e5e5;
 }

@@ -12,12 +12,36 @@
 <body>
 
 	<form action="" class="zen-form">
-		<a href="#" class="go-zen">Open zen mode</a>
-		<label for="input1">Title goes here...</label>
-		<input type="text" id="input1" value="Sample value" class="input">
-		<input type="checkbox" id="input1" value="Sample value" class="input">
-		<label for="input2">Type your content here...</label>
-		<textarea name="message" id="input2" cols="30" rows="10" class="input"></textarea>
+
+		<p>Hey, you can try to <a href="#" class="go-zen">edit this post in Zen Mode</a>!</p>
+
+		<label for="input1">Title</label>
+		<input type="text" id="input1" value="Lorem ipsum dolor sit amet" class="input" data-label="Title goes here...">
+
+		<label for="input2">Publish ?</label>
+		<select id="input2" name="publish" data-label="Publish this post? ">
+			<option value="1">yes</option>
+			<option value="0">nope</option>
+		</select>
+
+		<label for="input3">Category:</label>
+		<select id="input3" name="category">
+			<option value="0">Lorem ipsum dolor sit amet</option>
+			<option value="1">consectetur adipisicing elit</option>
+			<option value="2">Enim sequi a veniam magnam alias</option>
+			<option value="3">alias debitis libero necessitatibus</option>
+			<option value="4">ex molestias ipsa quas</option>
+			<option value="5">voluptates</option>
+			<option value="6">dolores delectus</option>
+			<option value="7">Hic in corrupti </option>
+			<option value="8">vero inventore alias</option>
+			<option value="9">quas error dolores </option>
+			<option value="10">doloribus vero rem </option>
+		</select>
+
+		<label for="input4">Type your content here...</label>
+		<textarea name="content" id="input4" cols="30" rows="10" class="input"></textarea>
+
 	</form>
 
 <script src="jquery.js"></script>
