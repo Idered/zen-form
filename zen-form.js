@@ -6,7 +6,7 @@
 
         settings = $.extend({
             trigger: '.go-zen',
-            theme: 'dark'
+            theme: 'dark',
         }, settings);
 
         /**
@@ -100,6 +100,11 @@
         App = {
 
             /**
+             * Orginal form element
+             */
+            Form: null,
+
+            /**
              * Wrapper element
              */
             Environment: null,
@@ -117,9 +122,14 @@
 
                 create: function() {
 
-                    return $('<div>', {
+                    // Callback: zf-initialize
+                    App.Form.trigger('zf-initialize');
+
+                    App.Environment = $('<div>', {
                         class: 'zen-forms' + (settings.theme == 'dark' ? '' : ' light-theme')
                     }).hide().appendTo('body').fadeIn(200);
+
+                    return App.Environment;
 
                 }, // create
 
@@ -127,6 +137,9 @@
                  * Update orginal inputs with new values and destroy Environment
                  */
                 destroy: function($elements) {
+
+                    // Callback: zf-destroy
+                    App.Form.trigger('zf-destroy');
 
                     // Update orginal inputs with new values
                     $elements.each(function(i) {
@@ -147,6 +160,9 @@
 
                     });
 
+                    // Callback: zf-destroyed
+                    App.Form.trigger('zf-destroyed');
+
                 }, // destroy
 
                 /**
@@ -158,7 +174,7 @@
 
                     $elements.each(function(i) {
 
-                        App.env.addWrapper('div', { class: 'zen-forms-input-wrap' });
+                        App.env.wrapper = App.env.createObject('div', { class: 'zen-forms-input-wrap' }).appendTo(App.Environment)
 
                         $el = $(this);
 
@@ -192,6 +208,9 @@
 
                     });
 
+                    // Callback: zf-initialized
+                    App.Form.trigger('zf-initialized', App.Environment);
+
                 }, // add
 
                 addInput: function($input, ID, value) {
@@ -203,7 +222,7 @@
                         type: $input.attr('type')
                     });
 
-                },
+                }, // addInput
 
                 addTextarea: function($textarea, ID, value) {
 
@@ -214,7 +233,7 @@
                         class: 'input'
                     });
 
-                },
+                }, // addTextarea
 
                 addSelect: function($orginalSelect, ID) {
 
@@ -247,7 +266,7 @@
 
                     return $customSelect;
 
-                },
+                }, // addSelect
 
                 /**
                  * Wrapper for creating jQuery objects
@@ -256,7 +275,7 @@
 
                     return $('<'+type+'>', params).on(fnMethod || 'click', fn);
 
-                }, // addObject
+                }, // createObject
 
                 /**
                  * Wrapper for adding jQuery objects to wrapper
@@ -264,15 +283,6 @@
                 addObject: function(type, params, fn, fnMethod) {
 
                     return App.env.createObject(type, params, fn, fnMethod).appendTo(App.env.wrapper || App.Environment);
-
-                }, // addObject
-
-                /**
-                 * Wrapper for creating jQuery "wrapper" element
-                 */
-                addWrapper: function(type, params) {
-
-                    return App.env.wrapper = App.env.createObject(type, params).appendTo(App.Environment);
 
                 }, // addObject
 
@@ -287,7 +297,7 @@
             zen: function($elements) {
 
                 // Create environment
-                App.Environment = App.env.create();
+                App.env.create();
 
                 // Add close button
                 App.env.addObject('a', {
@@ -305,38 +315,56 @@
                     App.env.switchTheme();
                 });
 
-                App.Environment.keydown(function(e) {
-                    // ESC to exit
-                    if (e.which == 27) {
+                // ESC to exit. Thanks @ktmud
+                App.Environment.keydown(function(event) {
+
+                    if (event.which == 27)
                         App.env.destroy($elements);
-                    }
+
                 });
 
                 // Add inputs and textareas from form
                 App.env.add($elements);
 
+                // Scroll to top
                 Utils.goTop();
 
+                // Additional select functionality
                 Utils.manageSelects();
 
+                // Select first input
                 Utils.focusFirst();
 
+                // Add .empty class for empty inputs
                 Utils.watchEmpty();
 
             }, // zen
 
         }; // App
 
-        return this.each(function() {
+        App.Form = $(this),
 
-            var $this = $(this);
+        $elements = App.Form.is('form') ? App.Form.find('input, textarea, select') : App.Form;
 
-            $(settings.trigger).on('click', function(event) {
-                event.preventDefault();
-                App.zen( $this.is('form') ? $this.find('input, textarea, select') : $this );
-            });
+        $(settings.trigger).on('click', function(event) {
+
+            event.preventDefault();
+
+            App.zen($elements);
 
         });
+
+        // Command: destroy
+        App.Form.on('destroy', function () {
+            App.env.destroy($elements);
+        });
+
+        // Command: init
+        App.Form.on('init', function () {
+            App.zen($elements);
+        });
+
+        return this;
 
     };
 

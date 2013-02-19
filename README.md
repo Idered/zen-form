@@ -52,6 +52,25 @@ $('.zen-mode').zenForm({
 * trigger ('.go-zen') - element the opens zen mode on click
 * theme   ('dark')
 
+##Commands
+
+Using commands you can init or destroy Zen Form environment.
+
+* init: `$('.zen-form').trigger('init');`
+* destroy: `$('.zen-form').trigger('destroy');`
+
+## Events
+
+There're a few basic callback:
+
+* zf-initialize: `$('.zen-form').on('zf-initialize');`
+* zf-initialized: `$('.zen-form').on('zf-initialized');`
+* zf-destroy: `$('.zen-form').on('zf-destroy');`
+* zf-destroyed `$('.zen-form').on('zf-destroyed', Environment);`
+
+Want more? Add them :)
+
+
 ## Contributing
 
 1. Fork it!

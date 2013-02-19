@@ -176,6 +176,7 @@ body {
 	padding: 8px 8px 8px 0;
 	display: inline-block;
 	vertical-align: top;
+	font: inherit;
 }
 
 .zen-forms .input + label {
