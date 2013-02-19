@@ -268,6 +268,9 @@ Full-Width Styles
 
 .outer {
   width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .inner {
@@ -390,7 +393,7 @@ Small Device Styles
   }
 
   .inner {
-    min-width: 320px;
+    /* min-width: 320px; */
     max-width: 480px;
   }
 
@@ -423,7 +426,10 @@ Small Device Styles
   }
 
   code, pre {
-    min-width: 320px;
+    /* min-width: 320px; */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 480px;
     font-size: 11px;
   }
