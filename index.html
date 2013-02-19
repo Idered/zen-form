@@ -7,7 +7,7 @@
     <meta name="description" content="Zen Form : Add distraction mode for forms" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/zen-form.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rawgithub.com/Idered/zen-form/master/zen-form.css">
 
     <title>Zen Form</title>
   </head>
@@ -38,12 +38,39 @@
 
 <h2>Demo</h2>
 
-<form action="/" class="zen">
-  <a href="#" class="go-zen">Edit in zen mode</a>
-  <input type="text" placeholder="Type your name here..." class="input">
-  <textarea name="bio" id="bio" class="input" placeholder="Write your bio here..."></textarea>
-  <input type="submit" name="submit" value="Send">
+<form action="/" class="zen-form">
+
+  <p>Hey, you can try to <a href="#" class="go-zen">edit this post in Zen Mode</a>!</p>
+
+  <label for="input1">Title</label>
+  <input type="text" id="input1" value="Lorem ipsum dolor sit amet" class="input" data-label="Title goes here...">
+
+  <label for="input2">Publish ?</label>
+  <select id="input2" name="publish" data-label="Publish this post? ">
+    <option value="1">yes</option>
+    <option value="0">nope</option>
+  </select>
+
+  <label for="input3">Category:</label>
+  <select id="input3" name="category">
+    <option value="0">Lorem ipsum dolor sit amet</option>
+    <option value="1">consectetur adipisicing elit</option>
+    <option value="2">Enim sequi a veniam magnam alias</option>
+    <option value="3">alias debitis libero necessitatibus</option>
+    <option value="4">ex molestias ipsa quas</option>
+    <option value="5">voluptates</option>
+    <option value="6">dolores delectus</option>
+    <option value="7">Hic in corrupti </option>
+    <option value="8">vero inventore alias</option>
+    <option value="9">quas error dolores </option>
+    <option value="10">doloribus vero rem </option>
+  </select>
+
+  <label for="input4">Type your content here...</label>
+  <textarea name="content" id="input4" cols="30" rows="10" class="input"></textarea>
+
 </form>
+
 
 <h2>Docs</h2>
 
@@ -131,10 +158,10 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="javascripts/zen-form.js"></script>
+<script src="https://rawgithub.com/Idered/zen-form/master/zen-form.js"></script>
 <script>
 (function($) {
-  $('.zen').zenForm();
+  $('.zen-form').zenForm();
 })(jQuery)
 </script>
 
