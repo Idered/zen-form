@@ -75,66 +75,9 @@
 
 <h2>Docs</h2>
 
-<p>You can add zen mode for all fields in form or single one. At the moment supported are only text inputs and textareas.</p>
+<a href="https://github.com/Idered/zen-form#readme">Check out in project repo.</a>
 
-<h3>Add zen for all supported elements in form</h3>
-
-<p><strong>HTML</strong></p>
-
-<pre><code>&lt;form class="zen-mode"&gt;
-    &lt;a href="#" class="go-zen"&gt;Open zen mode&lt;/a&gt;
-    &lt;input type="text" name="name" placeholder="Type your name here."&gt;
-    &lt;textarea name="bio" placeholder="Write your bio here..."&gt;&lt;/textarea&gt;
-    &lt;input type="submit" name="submit" value="Send"&gt;
-&lt;/form&gt;
-</code></pre>
-
-<p>.go-zen class is the default class that opens zen mode.</p>
-
-<p><strong>JS</strong></p>
-
-<pre><code>$('.zen-mode').zenForm();
-</code></pre>
-
-<h3>Add zen mode for single element</h3>
-
-<p>Bellow you can see how to change theme and use custom element as a trigger that opens zen mode.</p>
-
-<p><strong>HTML</strong></p>
-
-<pre><code>&lt;form&gt;
-    &lt;a href="#" class="open-zen-mode"&gt;Open zen mode&lt;/a&gt;
-    &lt;input type="text" name="name" placeholder="Type your name here."&gt;
-    &lt;textarea name="bio" placeholder="Write your bio here..." class="zen-mode"&gt;&lt;/textarea&gt;
-    &lt;input type="submit" name="submit" value="Send"&gt;
-&lt;/form&gt;
-</code></pre>
-
-<p><strong>JS</strong></p>
-
-<pre><code>$('.zen-mode').zenForm({
-    trigger: '.open-zen-mode',
-    theme: 'light'
-});
-</code></pre>
-
-<h2>Settings</h2>
-
-<ul>
-<li>trigger ('.go-zen') - element the opens zen mode on click</li>
-<li>theme   ('dark')</li>
-</ul><h2>Contributing</h2>
-
-<ol>
-<li>Fork it!</li>
-<li>Create your feature branch: <code>git checkout -b my-new-feature</code>
-</li>
-<li>Commit your changes: <code>git commit -am 'Add some feature'</code>
-</li>
-<li>Push to the branch: <code>git push origin my-new-feature</code>
-</li>
-<li>Submit a pull request :D</li>
-</ol><h2>License</h2>
+<h2>License</h2>
 
 <p><strong>MIT Licensing</strong></p>
 
