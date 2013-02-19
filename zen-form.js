@@ -14,17 +14,18 @@
          */
         var Utils = {
 
+            /**
+             * (Un)Wrap body content to hide overflow
+             */
             bodyWrap: function() {
 
-                var $body = $('body');
+                var $body = $('body'),
+                    $wrap = $body.children('.zen-forms-body-wrap');
 
-                if ( $body.children('.zen-forms-body-wrap').length ) {
-                    $body.children('.zen-forms-body-wrap').children().unwrap();
-                    console.log(1);
-                } else {
+                if ( $wrap.length )
+                    $wrap.children().unwrap();
+                else
                     $body.wrapInner('<div class="zen-forms-body-wrap"/>');
-                    console.log(2);
-                }
 
             }, // bodyWrap
 
