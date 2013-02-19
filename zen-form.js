@@ -269,13 +269,16 @@
                 }, function() {
                     App.env.switchTheme();
                 });
-                
+
                 App.Environment.keydown(function(e) {
                     // ESC to exit
                     if (e.which == 27) {
                         App.env.destroy($elements);
                     }
                 });
+
+                // Go to top
+                $('html,body').scrollTop(0);
 
                 // Hide any elements(mostly selects) when clicked outside them
                 $(document).on('click', function() {
