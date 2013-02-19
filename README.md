@@ -63,10 +63,16 @@ Using commands you can init or destroy Zen Form environment.
 
 There're a few basic callback:
 
-* zf-initialize: `$('.zen-form').on('zf-initialize');`
-* zf-initialized: `$('.zen-form').on('zf-initialized');`
-* zf-destroy: `$('.zen-form').on('zf-destroy');`
-* zf-destroyed `$('.zen-form').on('zf-destroyed', Environment);`
+* zf-initialize: `function(event)`
+* zf-initialized: `function(event, Environment)`
+* zf-destroy: `function(event, Environment)`
+* zf-destroyed: `function(event)`
+
+Sample usage:
+
+	$('.zen-form').on('zf-initialized', function(event, Environment) {
+		console.log(Environment)
+	});
 
 Want more? Add them :)
 

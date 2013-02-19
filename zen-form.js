@@ -139,7 +139,7 @@
                 destroy: function($elements) {
 
                     // Callback: zf-destroy
-                    App.Form.trigger('zf-destroy');
+                    App.Form.trigger('zf-destroy', App.Environment);
 
                     // Update orginal inputs with new values
                     $elements.each(function(i) {
