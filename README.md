@@ -1,6 +1,6 @@
 # Zen Form
 
-Zen Form plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.
+Zen Form plugin provides you with distraction-free mode that you can add to your forms or single inputs, textareas.
 
 ## Docs
 
