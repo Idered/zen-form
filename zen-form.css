@@ -198,7 +198,7 @@ body {
 	display: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
 
 	.zen-forms .input:focus + label {
 		display: block;
