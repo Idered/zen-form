@@ -1,113 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Zen Form : Add distraction mode for forms" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="dns-prefetch" href="//p.twitter.com">
+	<link rel="dns-prefetch" href="//cdn.api.twitter.com">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//connect.facebook.net">
+	<link rel="dns-prefetch" href="//platform.twitter.com">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="https://rawgithub.com/Idered/zen-form/master/zen-form.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<title>Zen Form</title>
 
-    <title>Zen Form</title>
-  </head>
+	<meta name="description" content="Zen Form : Add distraction mode for forms" />
 
-  <body>
+	<link rel="stylesheet" href="_ui/style.css">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Idered/zen-form">View on GitHub</a>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300,400' rel='stylesheet' type='text/css'>
 
-          <h1 id="project_title">Zen Form</h1>
-          <h2 id="project_tagline">Add distraction mode for forms</h2>
+	<link rel="author" href="https://plus.google.com/116964578938339291040/posts">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/Idered/zen-form/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/Idered/zen-form/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+	<meta property="og:title" content="Zen Form" />
+	<meta property="og:url" content="http://idered.github.com/zen-form">
+	<meta property="og:description" content="Add distraction free mode for forms." />
+	<meta property="og:type" content="website" />
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:url" content="http://idered.github.com/zen-form">
+	<meta property="twitter:description" content="Add distraction free mode for forms.">
+	<meta property="twitter:title" content="Zen Form">
+	<meta property="twitter:creator" content="@Idered">
+</head>
+<body>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Zen Form</h1>
+<div class="main wrapper">
 
-<p>Zen Form plugin provides you with distraction mode that you can add to your forms or single inputs, textareas.</p>
+	<header class="page-head">
+		<h1 class="site-name"><a href="/" rel="index">Zen Form</a></h1>
+		<h2 class="site-tagline">Add distraction free mode for forms</h2>
+		<div class="header__right">
+			<a href="https://github.com/Idered/zen-form">View on GitHub</a>
+			<a href="https://github.com/Idered/zen-form/zipball/master">Download</a>
+		</div>
+		<!-- /.header__right -->
+	</header>
+	<!-- /.page-head -->
 
-<h2>Demo</h2>
+	<div class="share">
+		<iframe src="http://ghbtns.com/github-btn.html?user=Idered&repo=zen-form&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
+		<iframe src="http://ghbtns.com/github-btn.html?user=Idered&repo=zen-form&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Add distraction free mode for forms: Zen Form" data-via="Idered">Tweet</a>
+		<a href="https://twitter.com/Idered" class="twitter-follow-button" data-show-count="false">Follow @Idered</a>
+	</div>
+	<!-- /.share -->
 
-<form action="/" class="zen-form">
+	<h3><a href="#section:about" id="section:about" class="anchor">About</a></h3>
+	<p class="desk--two-thirds">Zen Form is a jQuery based plugin with which you can easily add a distraction free mode for your forms. It's much easier to wirte posts, comments and messages this way.</p>
 
-  <p>Hey, you can try to <a href="#" class="go-zen">edit this post in Zen Mode</a>!</p>
+	<h3><a href="#section:demo" id="section:demo" class="anchor">Demo</a></h3>
+	<p>Please go <a href="https://rawgithub.com/Idered/zen-form/master/test/example.html">here</a> to view a sample</p>
 
-  <label for="input1">Title</label>
-  <input type="text" id="input1" value="Lorem ipsum dolor sit amet" class="input" data-label="Title goes here...">
+	<h3><a href="#section:usage" id="section:usage" class="anchor">Usage</a></h3>
+	<p>Apply your custom class to <code>form</code> or an <code>input</code>, <code>textarea</code>, <code>select</code>. Here're some samples:</p>
 
-  <label for="input2">Publish ?</label>
-  <select id="input2" name="publish" data-label="Publish this post? ">
-    <option value="1">yes</option>
-    <option value="0">nope</option>
-  </select>
+	<b>HTML:</b>
+	<pre class="prettyprint"><code>&lt;form action="/" class="zen-mode"&gt;
+	&lt;label for="input:name"&gt;Name:&lt;/label&gt;
+	&lt;input type="text" id="input:name" name="name" data-label="Type your name here..."&gt;
+	&lt;label for="input:message"&gt;Message:&lt;/label&gt;
+	&lt;input type="text" id="input:message" name="message" data-label="And your message..."&gt;
+&lt;/form&gt;</code></pre>
 
-  <label for="input3">Category:</label>
-  <select id="input3" name="category">
-    <option value="0">Lorem ipsum dolor sit amet</option>
-    <option value="1">consectetur adipisicing elit</option>
-    <option value="2">Enim sequi a veniam magnam alias</option>
-    <option value="3">alias debitis libero necessitatibus</option>
-    <option value="4">ex molestias ipsa quas</option>
-    <option value="5">voluptates</option>
-    <option value="6">dolores delectus</option>
-    <option value="7">Hic in corrupti </option>
-    <option value="8">vero inventore alias</option>
-    <option value="9">quas error dolores </option>
-    <option value="10">doloribus vero rem </option>
-  </select>
+	<pre class="prettyprint"><code>&lt;form action="/"&gt;
+	&lt;label for="input:message"&gt;Message:&lt;/label&gt;
+	&lt;input type="text" id="input:message" name="message" class="zen-mode" data-label="Type your message here..."&gt;
+&lt;/form&gt;</code></pre>
 
-  <label for="input4">Type your content here...</label>
-  <textarea name="content" id="input4" cols="30" rows="10" class="input"></textarea>
+	<b>JavaScript:</b>
+	<pre class="prettyprint"><code>$('.zen-form').zenForm();</code></pre>
 
-</form>
+	<h3><a href="#section:settings" id="section:settings" class="anchor">Settings</a></h3>
+	<dl class="opts">
+		<dt><span>trigger</span> <code>'.go-zen'</code></dt>
+		<dd><p>Element with this selector will open zen mode</p></dd>
 
+		<dt><span>theme</span> <code>[dark, light]</code></dt>
+		<dd><p>Default theme state</p></dd>
 
-<h2>Docs</h2>
+		<dt><span>data-label</span> </dt>
+		<dd><p>It's a html attribute you can add for an input, textarea or select. This will be used as label text.</p></dd>
+	</dl>
 
-<a href="https://github.com/Idered/zen-form#readme">Check out in project repo.</a>
+	<h3><a href="#section:events" id="section:events" class="anchor">Events</a></h3>
+	<dl class="opts">
+		<li><span>zf-initialize</span> <code>function(event)</code></li>
+		<li><span>zf-initialized</span> <code>function(event, Environment)</code></li>
+		<li><span>zf-destroy</span> <code>function(event, Environment)</code></li>
+		<li><span>zf-destroyed</span> <code>function(event)</code></li>
+	</dl>
 
-<h2>License</h2>
-
-<p><strong>MIT Licensing</strong></p>
-
-<p>Copyright (c) 2013 Kasper Mikiewicz</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Zen Form maintained by <a href="https://github.com/Idered">Idered</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+	<h4>Usage</h4>
+	<pre class="prettyprint"><code>$('.zen-form').on('zf-initialized', function(event, Environment) {
+	console.log(Environment)
+});</code></pre>
 
 
+	<h3><a href="#section:commands" id="section:commands" class="anchor">Commands</a></h3>
+	<dl class="params">
+		<dt><span>init</span> </dt>
+		<dd><p>Trigger zen mode</p></dd>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="https://rawgithub.com/Idered/zen-form/master/zen-form.js"></script>
+		<dt><span>destroy</span> </dt>
+		<dd><p>Close zen mode</p></dd>
+	</dl>
+
+	<h4>Usage</h4>
+	<pre class="prettyprint"><code>$('.zen-form').trigger('init');</code></pre>
+
+
+	<h3><a href="#section:license" id="section:license" class="anchor">License</a></h3>
+	<p><b>MIT Licensing</b></p>
+	<p>Copyright (c) 2013 Kasper Mikiewicz</p>
+	<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+	<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+	<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+	<div id="section:discussion" class="discussion">
+		<h3><a href="#section:discussion" class="anchor">Discussion</a></h3>
+		<p>Have a question, feedback or just want to say thanks? Go on :)</p>
+		<script type="text/javascript" src="http://embed-script.branch.com/assets/embed/embed.m.js?body=0" data-branch-embedid="PXxOJsVzlkA" ></script>
+		<noscript><a href="http://branch.com/b/zen-form">Zen Form</a></noscript>
+	</div>
+	<!-- /.discussion -->
+
+</div>
+<!-- /.main  -->
+
 <script>
-(function($) {
-  $('.zen-form').zenForm();
-})(jQuery)
-</script>
+	var scripts = {
+		'twitter-wjs'   : '//platform.twitter.com/widgets.js',
+		/*'analytics'     : ('https:'==location.protocol?'//ssl':'//www') + '.google-analytics.com/ga.js'*/
+	}, script, _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 
-  </body>
+	for (var id in scripts) {
+		script = document.createElement('script'); script.src = scripts[id];
+		script.id = id;script.type = 'text/javascript'; script.async = true;
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+	}
+</script>
+<script src="_ui/js/jquery.js"></script>
+<script src="_ui/js/plugins.js"></script>
+<script src="_ui/js/script.js"></script>
+</body>
 </html>

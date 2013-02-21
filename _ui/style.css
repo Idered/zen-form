@@ -1,0 +1,792 @@
+/*----------------------------------------------------------------------------*\
+   $NORMALIZE normalize.css v2.1.0 | MIT License | git.io/normalize
+\*----------------------------------------------------------------------------*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+
+button,
+input {
+	line-height: normal;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$BASE
+\*----------------------------------------------------------------------------*/
+
+html {
+	font: 300 .95em/1.5 "Open Sans", sans-serif;
+	background-color: #fff;
+	color: #333;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+/*----------------------------------------------------------------------------*\
+	$GRID
+\*----------------------------------------------------------------------------*/
+
+.wrapper {
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$ISLAND | csswizardry.com/2011/10/the-island-object
+\*----------------------------------------------------------------------------*/
+
+.islet,
+.island {
+	display: block;
+	margin-bottom: 24px;
+}
+
+.islet:after,
+.island:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.island {
+	padding:  24px;
+}
+
+.island > :last-child,
+.islet > :last-child{
+	margin-bottom: 0;
+}
+
+.islet {
+	padding: 12px;
+	margin-bottom: 12px;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$LINKS
+\*----------------------------------------------------------------------------*/
+
+a,
+.link--natural:hover {
+	color: #e14a42;
+	text-decoration: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+	outline: 0;
+	color: #333;
+}
+
+.link--natural {
+	color: inherit;
+	font-size:inherit;
+	line-height:inherit;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$LISTS
+\*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*\
+	$FORMS
+\*----------------------------------------------------------------------------*/
+
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-style: italic;
+}
+
+:-ms-input-placeholder {
+   font-style: italic;
+}
+
+.input-wrap {
+
+}
+
+.input-wrap:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.input-wrap label {
+
+}
+
+.input-wrap input,
+.input-wrap textarea {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.form-actions {
+	text-align: right;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$FX | Hover special effects
+\*----------------------------------------------------------------------------*/
+
+[class*=fx--] {
+	-webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+		-ms-transition: all .25s ease;
+		 -o-transition: all .25s ease;
+			transition: all .25s ease;
+}
+
+.fx--opacity:hover {
+	opacity: .7;
+	filter: alpha(opacity = 70);
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$TYPOGRAPHY
+\*----------------------------------------------------------------------------*/
+
+h1, h2, h3,
+h4, h5, h6 {
+	font-family: Merriweather, serif;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$CODE
+\*----------------------------------------------------------------------------*/
+
+pre, code, kbd, samp,
+pre textarea {
+	font-family: Monaco, 'Andale Mono', 'Courier New', monospace;
+}
+
+pre,
+pre textarea {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+code, pre {
+	padding: 0 3px 2px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px
+}
+
+code {
+	background-color:#fee9cc;
+	color:rgba(0,0,0,0.75);
+	padding:1px 3px;
+}
+
+pre code {
+	background: transparent;
+	display: block;
+	margin: .5em;
+}
+
+pre {
+	border: 1px solid #efefef;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: .9em;
+}
+
+pre textarea {
+	background: transparent;
+	overflow: hidden;
+	display: block;
+	border: none;
+	width: 100%;
+	color: #777;
+	resize: none;
+	margin: .5em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+pre textarea:focus { outline: none; }
+
+/* Google Prettify */
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #268bd2; }
+.kwd, .tag { color: #195f91; }
+.typ, .atn, .dec, .var { color: #CB4B16; }
+.pln { color: #93a1a1; }
+
+/*----------------------------------------------------------------------------*\
+	$SPRITE
+
+	<i class="s s--twitter"></i>
+\*----------------------------------------------------------------------------*/
+
+.s {
+	background-image:url(img/sprite.png);
+	display:inline-block;
+	line-height:1;
+	position:relative;
+	vertical-align:middle;
+	zoom:1;
+	width: 16px;
+	height:16px;
+	top:-1px;
+	overflow:hidden;
+   *text-indent:-9999px;
+}
+
+.s:before{
+	content:"";
+	display:block;
+	width:0;
+	height:100%;
+}
+
+/* Custom sprites
+\*------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*\
+	$NAV
+\*----------------------------------------------------------------------------*/
+
+.nav {
+	list-style: none;
+	margin-left: 0;
+}
+
+.nav:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.nav li,
+.nav li a {
+	display: inline-block;
+   *display: inline;
+	zoom: 1;
+}
+
+.nav--stacked li {
+	display: list-item;
+}
+
+.nav--stacked li a {
+	display: block;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$BUTTONS | Based on github.com/csswizardry/beautons
+\*----------------------------------------------------------------------------*/
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: 100%;
+	cursor: pointer;
+	border: none;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	line-height: 1.8;
+	padding-right: 1em;
+	padding-left: 1em;
+	border-radius: 4px;
+	text-shadow: 0 -1px rgba(0,0,0,.3);
+}
+
+.btn,
+.btn:hover {
+	text-decoration: none;
+}
+
+.btn:hover {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn:active,
+.btn:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* Sizes
+\*------------------------------------*/
+.btn--small {
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	line-height: 1.4;
+}
+
+.btn--large {
+	padding-right: 1.5em;
+	padding-left: 1.5em;
+	line-height: 2.2;
+}
+
+.btn--huge {
+	padding-right: 2em;
+	padding-left: 2em;
+	line-height: 4;
+}
+
+.btn--full {
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	text-align: center;
+}
+
+/* Font sizes
+\*------------------------------------*/
+.btn--alpha {
+	font-size: 3em;
+}
+
+.btn--beta {
+	font-size: 2.5em;
+}
+
+.btn--gamma {
+	font-size: 2em;
+}
+
+.btn--delta {
+	font-size: 1.55em;
+}
+
+.btn--epsilon {
+	font-size: 1.4em;
+}
+
+.btn--zeta {
+	font-size: 1.125em;
+}
+
+.btn--natural {
+	font-size: inherit;
+	line-height: inherit;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+}
+
+/* Functions
+\*------------------------------------*/
+.btn--primary {}
+.btn--primary:hover {}
+
+.btn--secondary {}
+.btn--secondary:hover {}
+
+.btn--tertiary {}
+.btn--tertiary:hover {}
+
+.btn--positive {
+	background-color: #4A993E;
+	color: #fff;
+}
+
+.btn--negative {
+	background-color: #b33630;
+	color: #fff;
+}
+
+.btn--inactive,
+.btn--inactive:hover,
+.btn--inactive:active,
+.btn--inactive:focus {
+	background-color: #ddd;
+	color: #777;
+	cursor: text;
+}
+
+/* Styles
+\*------------------------------------*/
+.btn--soft {
+	border-radius: 200px;
+}
+
+.btn--hard {
+	border-radius: 0;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$LAYOUT
+\*----------------------------------------------------------------------------*/
+
+.main:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$HEADER
+\*----------------------------------------------------------------------------*/
+
+.page-head {
+	padding: 2em 0;
+	border-bottom: 1px solid #efefef;
+}
+
+.site-name,
+.site-tagline {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.site-name {
+	font-size: 2em;
+}
+
+.site-tagline {
+	color: #777;
+	font: 300 1.5em/1 "Open Sans", sans-serif;
+}
+
+.site-tagline:before {
+	content: '|';
+	margin: -2px 15px 0 15px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.header__right {
+	float: right;
+	line-height: 3;
+}
+
+.header__right a {
+	display: inline-block;
+	padding: 0 1em;
+}
+
+.share {
+	padding: 2em 0;
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+}
+
+/*----------------------------------------------------------------------------*\
+	$CONTENT
+\*----------------------------------------------------------------------------*/
+
+.discussion {
+	margin: 3em auto;
+	max-width: 540px;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$HELPERS
+\*----------------------------------------------------------------------------*/
+
+/* Anchor
+\*------------------------------------*/
+.anchor {
+	position: relative;
+	color: inherit;
+}
+
+.anchor:hover {
+	color: #e14a42;
+}
+
+.anchor:hover:before {
+	content: '#';
+	right: 100%;
+	position: absolute;
+	margin-right: 5px;
+}
+
+/* Colors
+\*------------------------------------*/
+.color--primary {
+	color: #e14a42;
+}
+
+
+/*----------------------------------------------------------------------------*\
+	$MEDIA-QUERIES
+\*----------------------------------------------------------------------------*/
+
+@media (min-width: 960px) {
+
+	.desk--two-thirds {
+		width: 66.666%;
+	}
+
+}
+
+@media (max-width: 1024px) {
+
+	.wrapper {
+		padding: 0 20px;
+	}
+
+}
+
+/* Only Phones and Tablets (Portrait) */
+@media (max-width: 959px) {
+
+	.page-head {
+		text-align: center;
+	}
+
+	.header__right {
+		float: none;
+		margin-top: 1em;
+	}
+
+}
+
+/* Only Tablets (Portrait) */
+@media (min-width: 768px) and (max-width: 959px) {}
+
+/* Only Phones */
+@media (max-width: 767px) {
+
+	.site-tagline:before {
+		content: none;
+	}
+
+	.share {
+		display: none;
+	}
+
+}
+
+/* Only Phones (Landscape) */
+@media (min-width: 480px) and (max-width: 767px) {}
+
+/* Only Phones (Portrait) */
+@media (max-width: 479px) {}
