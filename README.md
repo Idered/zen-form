@@ -1,4 +1,4 @@
-### About<
+### About
 
 Zen Form is a jQuery based plugin with which you can easily add a distraction free mode for your forms. It's much easier to wirte posts, comments and messages this way.
 
