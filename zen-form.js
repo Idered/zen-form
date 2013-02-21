@@ -189,7 +189,7 @@
                  */
                 add: function($elements) {
 
-                    var $el, $label, value, id, IE, label;
+                    var $el, $label, value, id, ID, label;
 
                     $elements.each(function(i) {
 
@@ -201,7 +201,7 @@
 
                         id = $el.attr('id');
 
-                        var ID = 'zen-forms-input' + i;
+                        ID = 'zen-forms-input' + i;
 
                         label = $el.data('label') || $("label[for=" + id + "]").text() || $el.attr('placeholder') || '';
 
