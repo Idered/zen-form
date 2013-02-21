@@ -3,9 +3,7 @@
  * ================================== */
 
 .zen-forms {
-	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-	font-size: 100%;
-	font-size: 1.2em;
+	font: normal 18px/1.2 "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 	position: absolute;
 	z-index: 99999;
 	top: 0;
@@ -198,6 +196,38 @@ body {
 
 .zen-forms .input:focus + label {
 	display: none;
+}
+
+@media (min-width: 960px) {
+
+	.zen-forms .input:focus + label {
+		display: block;
+		background: #000;
+		font-size: .8em;
+		padding: 0 .5em;
+		line-height: 2;
+		border-radius: 3px;
+		margin: 5px 15px 0 0;
+		right: 100%;
+		width: auto;
+		white-space: nowrap;
+		color: #fff;
+		opacity: .5;
+	}
+
+	.zen-forms .input:focus + label:after {
+		content: '';
+		top: 50%;
+		left: 100%;
+		width: 0px;
+		height: 0px;
+		margin-top: -4px;
+		position: absolute;
+		border-style: solid;
+		border-width: 4px 0 4px 4px;
+		border-color: transparent transparent transparent #000000;
+	}
+
 }
 
 .zen-forms :focus {
