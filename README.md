@@ -1,91 +1,119 @@
-# Zen Form
+### About<
 
-Zen Form plugin provides you with distraction-free mode that you can add to your forms or single inputs, textareas.
+Zen Form is a jQuery based plugin with which you can easily add a distraction free mode for your forms. It's much easier to wirte posts, comments and messages this way.
 
-## Docs
+### Demo
 
-You can add zen mode for all fields in form or single one. At the moment supported are only text inputs and textareas.
+Please go [here][1] to view a sample
 
-### Add zen for all supported elements in form
+### Usage
 
-**HTML**
-```
-<form class="zen-mode">
-	<a href="#" class="go-zen">Open zen mode</a>
-	<input type="text" name="name" placeholder="Type your name here.">
-	<textarea name="bio" placeholder="Write your bio here..."></textarea>
-	<input type="submit" name="submit" value="Send">
-</form>
-```
+Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're some samples:
 
-.go-zen class is the default class that opens zen mode.
+**HTML:** 
 
-**JS**
-```
-$('.zen-mode').zenForm();
-```
+	<form action="/" class="zen-mode">
+		<label for="input:name">Name:</label>
+		<input type="text" id="input:name" name="name" data-label="Type your name here...">
+		<label for="input:message">Message:</label>
+		<input type="text" id="input:message" name="message" data-label="And your message...">
+	</form>
 
-### Add zen mode for single element
+	<form action="/">
+		<label for="input:message">Message:</label>
+		<input type="text" id="input:message" name="message" class="zen-mode" data-label="Type your message here...">
+	</form>
 
-Bellow you can see how to change theme and use custom element as a trigger that opens zen mode.
+**JavaScript:** 
 
-**HTML**
-```
-<form>
-	<a href="#" class="open-zen-mode">Open zen mode</a>
-	<input type="text" name="name" placeholder="Type your name here.">
-	<textarea name="bio" placeholder="Write your bio here..." class="zen-mode"></textarea>
-	<input type="submit" name="submit" value="Send">
-</form>
-```
+	$('.zen-mode').zenForm();
 
-**JS**
-```
-$('.zen-mode').zenForm({
-	trigger: '.open-zen-mode',
-	theme: 'light'
-});
-```
+### Settings
 
-## Settings
+<dl>
+	<dt>
+		<span>trigger</span> <code>'.go-zen'</code>
+	</dt>
+	
+	<dd>
+		<p>
+			Element with this selector will open zen mode
+		</p>
+	</dd>
+	
+	<dt>
+		<span>theme</span> <code>[dark, light]</code>
+	</dt>
+	
+	<dd>
+		<p>
+			Default theme state
+		</p>
+	</dd>
+	
+	<dt>
+		<span>data-label</span>
+	</dt>
+	
+	<dd>
+		<p>
+			It's a html attribute you can add for an input, textarea or select. This will be used as label text.
+		</p>
+	</dd>
+</dl>
 
-* trigger ('.go-zen') - element the opens zen mode on click
-* theme   ('dark')
+### Events
 
-##Commands
+<ul>
+	<li>
+		<span>zf-initialize</span> <code>function(event)</code>
+	</li>
+	<li>
+		<span>zf-initialized</span> <code>function(event, Environment)</code>
+	</li>
+	<li>
+		<span>zf-destroy</span> <code>function(event, Environment)</code>
+	</li>
+	<li>
+		<span>zf-destroyed</span> <code>function(event)</code>
+	</li>
+</ul>
 
-Using commands you can init or destroy Zen Form environment.
-
-* init: `$('.zen-form').trigger('init');`
-* destroy: `$('.zen-form').trigger('destroy');`
-
-## Events
-
-There're a few basic callback:
-
-* zf-initialize: `function(event)`
-* zf-initialized: `function(event, Environment)`
-* zf-destroy: `function(event, Environment)`
-* zf-destroyed: `function(event)`
-
-Sample usage:
+#### Usage
 
 	$('.zen-form').on('zf-initialized', function(event, Environment) {
 		console.log(Environment)
 	});
 
-Want more? Add them :)
+### Commands
 
+<dl>
+	<dt>
+		<span>init</span>
+	</dt>
+	
+	<dd>
+		<p>
+			Trigger zen mode
+		</p>
+	</dd>
+	
+	<dt>
+		<span>destroy</span>
+	</dt>
+	
+	<dd>
+		<p>
+			Close zen mode
+		</p>
+	</dd>
+</dl>
 
-## Contributing
+#### Usage
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+	$('.zen-form').trigger('init');
 
-## License
+### License
 
 **MIT Licensing**
 
@@ -96,3 +124,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ [1]: https://rawgithub.com/Idered/zen-form/master/test/example.html
