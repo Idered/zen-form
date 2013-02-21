@@ -6,7 +6,7 @@
 
         settings = $.extend({
             trigger: '.go-zen',
-            theme: 'dark',
+            theme: 'dark'
         }, settings);
 
         /**
@@ -193,7 +193,7 @@
 
                     $elements.each(function(i) {
 
-                        App.env.wrapper = App.env.createObject('div', { class: 'zen-forms-input-wrap' }).appendTo(App.Environment)
+                        App.env.wrapper = App.env.createObject('div', { class: 'zen-forms-input-wrap' }).appendTo(App.Environment);
 
                         $el = $(this);
 
@@ -201,7 +201,7 @@
 
                         id = $el.attr('id');
 
-                        ID = 'zen-forms-input' + i;
+                        var ID = 'zen-forms-input' + i;
 
                         label = $el.data('label') || $("label[for=" + id + "]").text() || $el.attr('placeholder') || '';
 
@@ -357,13 +357,13 @@
                 // Add .empty class for empty inputs
                 Utils.watchEmpty();
 
-            }, // zen
+            } // zen
 
         }; // App
 
-        App.Form = $(this),
+        App.Form = $(this);
 
-        $elements = App.Form.is('form') ? App.Form.find('input, textarea, select') : App.Form;
+        var $elements = App.Form.is('form') ? App.Form.find('input, textarea, select') : App.Form;
 
         $(settings.trigger).on('click', function(event) {
 
