@@ -35,18 +35,21 @@ body {
 /**
  * Buttons style
  */
-.zen-forms-close-button,
-.zen-forms-theme-switch {
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	top: 10px;
-	right: 12px;
-	cursor: pointer;
+
+.zen-forms-header {
+	max-width: 640px;
+	text-align: right;
+	margin: 0 auto 1em auto;
 }
 
+.zen-forms-close-button,
 .zen-forms-theme-switch {
-	top: 36px;
+	cursor: pointer;
+	font-size: .8em;
+	padding: 0 .5em;
+	line-height: 2;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .zen-icon {
@@ -54,7 +57,7 @@ body {
 	display: inline-block;
 	line-height: 1;
 	position: relative;
-	vertical-align: top;
+	vertical-align: middle;
 	zoom: 1;
 	width: 16px;
 	height: 16px;
@@ -70,23 +73,23 @@ body {
 	height: 100%;
 }
 
-.light-theme .zen-icon--close:hover,
+.light-theme .zen-forms-close-button:hover .zen-icon,
 .zen-icon--close {
 	background-position: -16px 0;
 }
 
-.light-theme .zen-icon--theme:hover,
+.light-theme .zen-forms-theme-switch:hover .zen-icon,
 .zen-icon--theme {
 	background-position: 0 0;
 }
 
 .light-theme .zen-icon--close,
-.zen-icon--close:hover {
+.zen-forms-close-button:hover .zen-icon {
 	background-position: -16px -16px;
 }
 
 .light-theme .zen-icon--theme,
-.zen-icon--theme:hover {
+.zen-forms-theme-switch:hover .zen-icon {
 	background-position: 0 -16px;
 }
 
@@ -245,6 +248,16 @@ body {
 	background: #151a1c;
 }
 
+.zen-forms .zen-forms-close-button,
+.zen-forms .zen-forms-theme-switch {
+	color: #768991;
+}
+
+.zen-forms .zen-forms-close-button:hover,
+.zen-forms .zen-forms-theme-switch:hover {
+	color: #707071;
+}
+
 .zen-forms label {
 	color: #415056;
 }
@@ -275,6 +288,16 @@ body {
  */
 .zen-forms.light-theme {
 	background: #fefefe;
+}
+
+.zen-forms.light-theme .zen-forms-close-button,
+.zen-forms.light-theme .zen-forms-theme-switch {
+	color: #707071;
+}
+
+.zen-forms.light-theme .zen-forms-close-button:hover,
+.zen-forms.light-theme .zen-forms-theme-switch:hover {
+	color: #768991;
 }
 
 .zen-forms.light-theme label {

@@ -79,12 +79,6 @@
 
             }, // customSelect
 
-            goTop: function () {
-
-                $('html,body').scrollTop(0);
-
-            }, // goTop
-
             /**
              * Hide any elements(mostly selects) when clicked outside them
              */
@@ -147,6 +141,14 @@
                         class: 'zen-forms' + (settings.theme == 'dark' ? '' : ' light-theme')
                     }).hide().appendTo('body').fadeIn(200);
 
+                    // ESC to exit. Thanks @ktmud
+                    $('body').on('keydown', function (event) {
+
+                        if (event.which == 27)
+                            App.env.destroy($elements);
+
+                    });
+
                     return App.Environment;
 
                 }, // create
@@ -158,6 +160,8 @@
 
                     // Callback: zf-destroy
                     App.Form.trigger('zf-destroy', App.Environment);
+
+                    $('body').off('keydown');
 
                     // Update orginal inputs with new values
                     $elements.each(function (i) {
@@ -322,10 +326,15 @@
                 // Create environment
                 App.env.create();
 
+                // Add wrapper div for close and theme buttons
+                App.env.wrapper = App.env.createObject('div', {
+                    class: 'zen-forms-header'
+                }).appendTo(App.Environment);
+
                 // Add close button
                 App.env.addObject('a', {
                     class: 'zen-forms-close-button',
-                    html: '<i class="zen-icon zen-icon--close"></i>'
+                    html: '<i class="zen-icon zen-icon--close"></i> Exit Zen Mode'
                 }, function () {
                     App.env.destroy($elements);
                 });
@@ -333,24 +342,13 @@
                 // Add theme switch button
                 App.env.addObject('a', {
                     class: 'zen-forms-theme-switch',
-                    html: '<i class="zen-icon zen-icon--theme"></i>'
+                    html: '<i class="zen-icon zen-icon--theme"></i> Switch theme'
                 }, function () {
                     App.env.switchTheme();
                 });
 
-                // ESC to exit. Thanks @ktmud
-                App.Environment.keydown(function (event) {
-
-                    if (event.which == 27)
-                        App.env.destroy($elements);
-
-                });
-
                 // Add inputs and textareas from form
                 App.env.add($elements);
-
-                // Scroll to top
-                Utils.goTop();
 
                 // Additional select functionality
                 Utils.manageSelects();
