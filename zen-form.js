@@ -1,4 +1,4 @@
-/** Zen Forms 1.0.2 | MIT License | git.io/zen-form */
+/** Zen Forms 1.0.3 | MIT License | git.io/zen-form */
 
 (function ($) {
 
