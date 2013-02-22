@@ -1,12 +1,12 @@
-### About
+## About
 
 Zen Form is a jQuery based plugin with which you can easily add a distraction free mode for your forms. It's much easier to wirte posts, comments and messages this way.
 
-### Demo
+## Demo
 
 Please go [here][1] to view a sample
 
-### Usage
+## Usage
 
 Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're some samples:
 
@@ -28,7 +28,7 @@ Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're s
 
 	$('.zen-mode').zenForm();
 
-### Settings
+## Settings
 
 <dl>
 	<dt>
@@ -62,7 +62,7 @@ Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're s
 	</dd>
 </dl>
 
-### Events
+## Events
 
 <ul>
 	<li>
@@ -79,13 +79,13 @@ Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're s
 	</li>
 </ul>
 
-#### Usage
+### Usage
 
 	$('.zen-form').on('zf-initialized', function(event, Environment) {
 		console.log(Environment)
 	});
 
-### Commands
+## Commands
 
 <dl>
 	<dt>
@@ -109,11 +109,11 @@ Apply your custom class to `form` or an `input`, `textarea`, `select`. Here're s
 	</dd>
 </dl>
 
-#### Usage
+### Usage
 
 	$('.zen-form').trigger('init');
 
-### License
+## License
 
 **MIT Licensing**
 
@@ -125,4 +125,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
- [1]: https://rawgithub.com/Idered/zen-form/master/test/example.html
+ [1]: http://idered.github.com/zen-form/demo
