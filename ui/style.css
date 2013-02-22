@@ -391,6 +391,16 @@ pre textarea:focus { outline: none; }
 	border-bottom: 1px solid #efefef;
 }
 
+.share > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hn-share-iframe {
+	width: 120px;
+	margin-top: 1px;
+}
+
 /*----------------------------------------------------------------------------*\
 	$CONTENT
 \*----------------------------------------------------------------------------*/
