@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+	<title>Zen Form - Demo</title>
+
+	<meta name="description" content="Zen Form : Add distraction mode for forms" />
+
+	<link rel="stylesheet" href="http://rawgithub.com/Idered/zen-form/master/zen-form.css">
+	<link rel="stylesheet" href="../ui/zen-form.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300,400' rel='stylesheet' type='text/css'>
+
+	<link rel="author" href="https://plus.google.com/116964578938339291040/posts">
+</head>
+<body>
+
+<form action="" class="zen-mode">
+
+	<p class="text--center">
+		<a href="#" class="btn btn--primary go-zen">Edit in Zen Mode</a>
+	</p>
+
+	<div class="input-wrap">
+		<label for="input1">Title</label>
+		<input type="text" id="input1" value="Lorem ipsum dolor sit amet" class="input" data-label="Title goes here...">
+	</div>
+
+	<div class="input-wrap">
+		<label for="input2">Publish ?</label>
+		<select id="input2" name="publish" data-label="Publish this post? ">
+			<option value="1">yes</option>
+			<option value="0">nope</option>
+		</select>
+	</div>
+
+	<div class="input-wrap">
+		<label for="input3">Category:</label>
+		<select id="input3" name="category">
+			<option value="0">Lorem ipsum dolor sit amet</option>
+			<option value="1">consectetur adipisicing elit</option>
+			<option value="2">Enim sequi a veniam magnam alias</option>
+			<option value="3">alias debitis libero necessitatibus</option>
+			<option value="4">ex molestias ipsa quas</option>
+			<option value="5">voluptates</option>
+			<option value="6">dolores delectus</option>
+			<option value="7">Hic in corrupti </option>
+			<option value="8">vero inventore alias</option>
+			<option value="9">quas error dolores </option>
+			<option value="10">doloribus vero rem </option>
+		</select>
+	</div>
+
+	<div class="input-wrap input-wrap--textarea">
+		<label for="input4">Content:</label>
+		<a href="#" class="go-zen--textarea"><i class="s s--zen">Edit in Zen Mode</i></a>
+		<textarea name="content" id="input4" cols="30" rows="10" class="input zen-mode--textarea" data-label="Type content here..."></textarea>
+	</div>
+
+</form>
+
+<script src="../ui/js/jquery.js"></script>
+<script src="http://rawgithub.com/Idered/zen-form/master/zen-form.js"></script>
+<script type="text/javascript">
+	$('.zen-mode').zenForm();
+	$('.zen-mode--textarea').zenForm({ trigger: '.go-zen--textarea' });
+</script>
+</body>
+</html>
