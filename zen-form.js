@@ -1,8 +1,8 @@
 /** Zen Forms 1.0.2 | MIT License | git.io/zen-form */
 
-(function($) {
+(function ($) {
 
-    $.fn.zenForm = function(settings) {
+    $.fn.zenForm = function (settings) {
 
         settings = $.extend({
             trigger: '.go-zen',
@@ -17,28 +17,29 @@
             /**
              * (Un)Wrap body content to hide overflow
              */
-            bodyWrap: function() {
+            bodyWrap: function () {
 
                 var $body = $('body'),
                     $wrap = $body.children('.zen-forms-body-wrap');
 
-                if ( $wrap.length )
+                if ($wrap.length) {
                     $wrap.children().unwrap();
-                else
+                } else {
                     $body.wrapInner('<div class="zen-forms-body-wrap"/>');
+                }
 
             }, // bodyWrap
 
             /**
              * Watch inputs and add "empty" class if needed
              */
-            watchEmpty: function() {
+            watchEmpty: function () {
 
-                App.Environment.find('input, textarea, select').each(function() {
+                App.Environment.find('input, textarea, select').each(function () {
 
-                   $(this).on('change', function() {
+                   $(this).on('change', function () {
 
-                        $(this)[ $(this).val() ? 'removeClass' : 'addClass' ]('empty');
+                        $(this)[$(this).val() ? 'removeClass' : 'addClass']('empty');
 
                    }).trigger('change');
 
@@ -49,11 +50,11 @@
             /**
              * Custom styled selects
              */
-            customSelect: function($select, $customSelect) {
+            customSelect: function ($select, $customSelect) {
 
                 var $selected;
 
-                $customSelect.on('click', function(event) {
+                $customSelect.on('click', function (event) {
 
                     event.stopPropagation();
 
@@ -61,14 +62,14 @@
 
                     $customSelect.toggleClass('is-open');
 
-                    if ( $customSelect.hasClass('is-open') ) {
+                    if ($customSelect.hasClass('is-open')) {
                         $customSelect.scrollTop(
                             $selected.position().top - $selected.outerHeight()
                         );
                     }
 
 
-                }).find('a').on('click', function() {
+                }).find('a').on('click', function () {
 
                     $(this).addClass('selected').siblings().removeClass('selected');
 
@@ -78,7 +79,7 @@
 
             }, // customSelect
 
-            goTop: function() {
+            goTop: function () {
 
                 $('html,body').scrollTop(0);
 
@@ -87,9 +88,9 @@
             /**
              * Hide any elements(mostly selects) when clicked outside them
              */
-            manageSelects: function() {
+            manageSelects: function () {
 
-                $(document).on('click', function() {
+                $(document).on('click', function () {
                     $('.is-open').removeClass('is-open');
                 });
 
@@ -98,12 +99,12 @@
             /**
              * Hide any elements(mostly selects) when clicked outside them
              */
-            focusFirst: function() {
+            focusFirst: function () {
 
                 var $first = App.Environment.find('input').first();
 
                 // we need to re-set value to remove focus selection
-                $first.focus().val( $first.val() );
+                $first.focus().val($first.val());
 
             } // focusFirst
 
@@ -135,7 +136,7 @@
                  */
                 wrapper: null,
 
-                create: function() {
+                create: function () {
 
                     // Callback: zf-initialize
                     App.Form.trigger('zf-initialize');
@@ -153,25 +154,26 @@
                 /**
                  * Update orginal inputs with new values and destroy Environment
                  */
-                destroy: function($elements) {
+                destroy: function ($elements) {
 
                     // Callback: zf-destroy
                     App.Form.trigger('zf-destroy', App.Environment);
 
                     // Update orginal inputs with new values
-                    $elements.each(function(i) {
+                    $elements.each(function (i) {
 
                         var $el = $('#zen-forms-input' + i);
 
-                        if ( $el.length )
+                        if ($el.length) {
                             $(this).val($el.val());
+                        }
 
                     });
 
                     Utils.bodyWrap();
 
                     // Hide and remove Environment
-                    App.Environment.fadeOut(200, function() {
+                    App.Environment.fadeOut(200, function () {
 
                         App.env.wrapper = null;
 
@@ -187,13 +189,15 @@
                 /**
                  * Append inputs, textareas to Environment
                  */
-                add: function($elements) {
+                add: function ($elements) {
 
                     var $el, $label, value, id, ID, label;
 
-                    $elements.each(function(i) {
+                    $elements.each(function (i) {
 
-                        App.env.wrapper = App.env.createObject('div', { class: 'zen-forms-input-wrap' }).appendTo(App.Environment);
+                        App.env.wrapper = App.env.createObject('div', {
+                            class: 'zen-forms-input-wrap'
+                        }).appendTo(App.Environment);
 
                         $el = $(this);
 
@@ -206,11 +210,11 @@
                         label = $el.data('label') || $("label[for=" + id + "]").text() || $el.attr('placeholder') || '';
 
                         // Exclude specified elements
-                        if ( $.inArray( $el.attr('type'), ['checkbox', 'radio', 'submit']) == -1) {
+                        if ($.inArray( $el.attr('type'), ['checkbox', 'radio', 'submit']) == -1) {
 
-                            if ( $el.is('input') )
+                            if ($el.is('input') )
                                 App.env.addInput($el, ID, value);
-                            else if ( $el.is('select') )
+                            else if ($el.is('select') )
                                 App.env.addSelect($el, ID);
                             else
                                 App.env.addTextarea($el, ID, value);
@@ -220,7 +224,7 @@
                                 text: label
                             });
 
-                            if ( $el.is('select') )
+                            if ($el.is('select') )
                                 $label.prependTo(App.env.wrapper);
 
                         }
@@ -232,7 +236,7 @@
 
                 }, // add
 
-                addInput: function($input, ID, value) {
+                addInput: function ($input, ID, value) {
 
                     return App.env.addObject('input', {
                         id: ID,
@@ -243,7 +247,7 @@
 
                 }, // addInput
 
-                addTextarea: function($textarea, ID, value) {
+                addTextarea: function ($textarea, ID, value) {
 
                     return App.env.addObject('textarea', {
                         id: ID,
@@ -254,7 +258,7 @@
 
                 }, // addTextarea
 
-                addSelect: function($orginalSelect, ID) {
+                addSelect: function ($orginalSelect, ID) {
 
                     var $select = App.env.addObject('select', {
                             id: ID,
@@ -268,7 +272,7 @@
 
                     $select.append($options.clone());
 
-                    $.each($options, function(i, option) {
+                    $.each($options, function (i, option) {
 
                         App.env.createObject('a', {
                             href: '#',
@@ -290,7 +294,7 @@
                 /**
                  * Wrapper for creating jQuery objects
                  */
-                createObject: function(type, params, fn, fnMethod) {
+                createObject: function (type, params, fn, fnMethod) {
 
                     return $('<'+type+'>', params).on(fnMethod || 'click', fn);
 
@@ -299,13 +303,13 @@
                 /**
                  * Wrapper for adding jQuery objects to wrapper
                  */
-                addObject: function(type, params, fn, fnMethod) {
+                addObject: function (type, params, fn, fnMethod) {
 
                     return App.env.createObject(type, params, fn, fnMethod).appendTo(App.env.wrapper || App.Environment);
 
                 }, // addObject
 
-                switchTheme: function() {
+                switchTheme: function () {
 
                     App.Environment.toggleClass('light-theme');
 
@@ -313,7 +317,7 @@
 
             }, // env
 
-            zen: function($elements) {
+            zen: function ($elements) {
 
                 // Create environment
                 App.env.create();
@@ -322,7 +326,7 @@
                 App.env.addObject('a', {
                     class: 'zen-forms-close-button',
                     html: '<i class="zen-icon zen-icon--close"></i>'
-                }, function() {
+                }, function () {
                     App.env.destroy($elements);
                 });
 
@@ -330,12 +334,12 @@
                 App.env.addObject('a', {
                     class: 'zen-forms-theme-switch',
                     html: '<i class="zen-icon zen-icon--theme"></i>'
-                }, function() {
+                }, function () {
                     App.env.switchTheme();
                 });
 
                 // ESC to exit. Thanks @ktmud
-                App.Environment.keydown(function(event) {
+                App.Environment.keydown(function (event) {
 
                     if (event.which == 27)
                         App.env.destroy($elements);
@@ -365,7 +369,7 @@
 
         var $elements = App.Form.is('form') ? App.Form.find('input, textarea, select') : App.Form;
 
-        $(settings.trigger).on('click', function(event) {
+        $(settings.trigger).on('click', function (event) {
 
             event.preventDefault();
 
