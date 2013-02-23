@@ -218,7 +218,7 @@ body {
 \*----------------------------------------------------------------------------*/
 
 .wrapper {
-	max-width: 1120px;
+	max-width: 35em;
 	margin: 0 auto;
 }
 
@@ -274,8 +274,8 @@ pre textarea {
 pre,
 pre textarea {
 	white-space: pre;
-	white-space: pre-wrap;
-	word-wrap: break-word;
+	word-wrap: normal;
+	overflow: auto;
 }
 
 code, pre {
@@ -365,28 +365,19 @@ pre textarea:focus { outline: none; }
 
 .site-tagline {
 	color: #777;
-	font: 300 1.5em/1 "Open Sans", sans-serif;
+	font: 300 1.3em/1 "Open Sans", sans-serif;
 }
 
 .site-tagline:before {
 	content: '|';
-	margin: -2px 15px 0 15px;
+	margin: -2px .5em 0 .5em;
 	display: inline-block;
 	vertical-align: top;
 }
 
-.header__right {
-	float: right;
-	line-height: 3;
-}
-
-.header__right a {
-	display: inline-block;
-	padding: 0 1em;
-}
-
 .share {
-	padding: 2em 0;
+	margin-top: 1.3em;
+	padding-bottom: 1.3em;
 	text-align: center;
 	border-bottom: 1px solid #efefef;
 }
@@ -396,11 +387,43 @@ pre textarea:focus { outline: none; }
 	vertical-align: middle;
 }
 
-.hn-share-iframe {
-	width: 120px;
-	margin-top: 1px;
+.github-links {
+	margin: 2em 0;
+	text-align: center;
 }
 
+.github-links:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.github-links a {
+	color: #fff;
+	border-radius: 3px;
+	background-color: #e14a42;
+	margin: 0 1%;
+	padding: 0;
+	display: inline-block;
+	width: 46%;
+	line-height: 3;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.github-links a ~ a {
+	margin-left: 1%;
+}
+
+.github-links a:hover {
+	background: #e6674a;
+}
+
+.github-links a:active {
+	box-shadow: 0 0 30px rgba(0,0,0, .2) inset;
+}
 /*----------------------------------------------------------------------------*\
 	$CONTENT
 \*----------------------------------------------------------------------------*/
@@ -417,20 +440,20 @@ pre textarea:focus { outline: none; }
 
 /* Anchor
 \*------------------------------------*/
-.anchor {
+[href^="#"] {
 	position: relative;
 	color: inherit;
 }
 
-.anchor:hover {
+[href^="#"]:hover {
 	color: #e14a42;
 }
 
-.anchor:hover:before {
+[href^="#"]:hover:before {
 	content: '#';
 	right: 100%;
 	position: absolute;
-	margin-right: 5px;
+	margin-right: .2em;
 }
 
 /* Colors
@@ -444,32 +467,12 @@ pre textarea:focus { outline: none; }
 	$MEDIA-QUERIES
 \*----------------------------------------------------------------------------*/
 
-@media (min-width: 960px) {
-
-	.desk--two-thirds {
-		width: 66.666%;
-	}
-
-}
-
-@media (max-width: 1024px) {
-
-	.wrapper {
-		padding: 0 20px;
-	}
-
-}
 
 /* Only Phones and Tablets (Portrait) */
 @media (max-width: 959px) {
 
-	.page-head {
-		text-align: center;
-	}
-
-	.header__right {
-		float: none;
-		margin-top: 1em;
+	.wrapper {
+		padding: 0 10px;
 	}
 
 }
@@ -479,6 +482,10 @@ pre textarea:focus { outline: none; }
 
 /* Only Phones */
 @media (max-width: 767px) {
+
+	.page-head {
+		text-align: center;
+	}
 
 	.site-tagline:before {
 		content: none;
